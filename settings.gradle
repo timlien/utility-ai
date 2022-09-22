@@ -1,2 +1,4 @@
 rootProject.name = 'utility-ai'
+include 'utility'
+include 'example'
 

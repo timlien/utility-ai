@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'com.tingshulien.game.utility.example'
+version '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':utility')
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+}
+
+test {
+    useJUnitPlatform()
+}
