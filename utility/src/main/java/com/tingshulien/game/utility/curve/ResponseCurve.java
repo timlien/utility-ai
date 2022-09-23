@@ -2,22 +2,22 @@ package com.tingshulien.game.utility.curve;
 
 public interface ResponseCurve {
 
-    float getM();
+    double getM();
 
-    void setM(float m);
+    void setM(double m);
 
-    float getK();
+    double getK();
 
-    void setK(float k);
+    void setK(double k);
 
-    float getB();
+    double getB();
 
-    void setB(float b);
+    void setB(double b);
 
-    float getC();
+    double getC();
 
-    void setC(float c);
+    void setC(double c);
 
-    float map(float x);
+    double map(double x);
 
 }

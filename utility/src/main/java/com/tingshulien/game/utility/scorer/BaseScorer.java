@@ -12,6 +12,6 @@ public abstract class BaseScorer<T extends AIContext> implements Scorer<T> {
     ResponseCurve curve;
 
     @Override
-    public abstract float score(T context);
+    public abstract double score(T context);
 
 }

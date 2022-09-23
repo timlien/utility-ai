@@ -5,23 +5,49 @@ import lombok.Setter;
 
 public abstract class BaseResponseCurve implements ResponseCurve {
 
+    /**
+     * slope
+     */
     @Getter
     @Setter
-    float m;
+    double m;
 
+    /**
+     * exponent
+     */
     @Getter
     @Setter
-    float k;
+    double k;
 
+    /**
+     * X-axis shift
+     */
     @Getter
     @Setter
-    float b;
+    double b;
 
+    /**
+     * Y-axis shift
+     */
     @Getter
     @Setter
-    float c;
+    double c;
 
     @Override
-    public abstract float map(float x);
+    public abstract double map(double x);
+
+    protected double sanitize(double value) {
+        if (Double.isInfinite(value)) {
+            return 0.0;
+        } else if (Double.isNaN(value)) {
+            return 0.0;
+        } else if (value < 0.0) {
+            return 0.0;
+        } else if (value > 1.0) {
+            return 1.0;
+        } else {
+            return value;
+        }
+    }
 
 }

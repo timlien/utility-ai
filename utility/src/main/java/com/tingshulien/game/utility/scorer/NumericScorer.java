@@ -8,18 +8,15 @@ public abstract class NumericScorer<T extends AIContext> extends BaseScorer<T> {
 
     @Getter
     @Setter
-    private float min;
+    private double min;
 
     @Getter
     @Setter
-    private float max;
+    private double max;
 
     @Override
-    public float score(T context) {
-        final float rawScore = calculate(context);
-        final float capScore = Math.min(Math.max(rawScore, min), max);
-        final float normalizedScore = (capScore - min) / (max - min);
-        return curve.map(normalizedScore);
+    public double score(T context) {
+        return curve.map(Utility.normalize(Utility.cap(calculate(context), min, max), min, max));
     }
 
     protected abstract float calculate(T context);

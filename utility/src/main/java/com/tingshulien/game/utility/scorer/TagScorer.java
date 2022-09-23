@@ -11,8 +11,8 @@ public abstract class TagScorer<E extends Enum<E>, T extends AIContext> extends 
     private E tag;
 
     @Override
-    public float score(T context) {
-        final float normalizedScore = isTagged(context) ? 1.0f : 0.0f;
+    public double score(T context) {
+        final double normalizedScore = isTagged(context) ? 1.0 : 0.0;
         return curve.map(normalizedScore);
     }
 
