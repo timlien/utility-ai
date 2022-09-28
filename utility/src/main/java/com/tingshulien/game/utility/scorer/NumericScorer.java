@@ -1,6 +1,7 @@
 package com.tingshulien.game.utility.scorer;
 
 import com.tingshulien.game.utility.AIContext;
+import com.tingshulien.game.utility.utility.Utility;
 import lombok.Getter;
 import lombok.Setter;
 

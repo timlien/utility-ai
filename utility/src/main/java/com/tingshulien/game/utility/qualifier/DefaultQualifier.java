@@ -12,7 +12,7 @@ public class DefaultQualifier<T extends AIContext> extends BaseQualifier<T> {
 
     @Getter
     @Setter
-    private float score = 1.0f;
+    private float score = 0.1f;
 
     @Override
     public float score(T context) {
